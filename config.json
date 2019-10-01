@@ -1,0 +1,9 @@
+{
+  "db": {
+    "driver": "{SQL Server}",
+    "server": "localhost",
+    "database": "NodeJsDB",
+    "username": "nodejs",
+    "password": "nodE$Js_2015!x"
+  }
+}
