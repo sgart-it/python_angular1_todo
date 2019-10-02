@@ -67,7 +67,7 @@ queries = {
     "read": "SELECT T.[id], [date], [title], [note], [idCategory], [category], [completed], [created], [modified]"
     + " FROM [todos] T INNER JOIN [categories] C ON T.[idCategory]=C.[id]"
     + " WHERE T.[id]=?;",
-    "insert": "INSERT INTO [todos] ([date],[title],[note],[idCategory]) VALUES(?,?,?,?);",
+    "insert": "INSERT INTO [todos] ([date],[title],[note],[idCategory],[created],[modified]) VALUES(?,?,?,?,GETDATE(),GETDATE());",
     "update": "UPDATE [todos] SET [date]=?,[title]=?,[note]=?,[idCategory]=?,[completed]=?,[modified]=GETDATE() WHERE [id]=?;",
     "remove": "DELETE FROM [todos] WHERE [id]=?;",
     "toggle": "UPDATE [todos] SET [completed]=CASE WHEN [completed] is null THEN GETDATE() ELSE null END, [modified]=GETDATE() WHERE [id]=?;",
