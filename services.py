@@ -33,9 +33,9 @@ def __db_get_cursor(cnn, query, params=()):
 
 def ___db_execute_cursor(query, params=()):
     with __db_get_connection() as cnn:
-        cursor = cnn.cursor()
-        cursor.execute(query, params)
-        cnn.commit()
+        with cnn.cursor() as cursor:
+            cursor.execute(query, params)
+            # cnn.commit()
 
 
 # service status
